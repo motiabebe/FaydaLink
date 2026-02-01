@@ -1,0 +1,135 @@
+[
+    {
+        "id": "abay",
+        "name": "Abay Bank",
+        "category": "bank",
+        "logo": "banks/abay.png",
+        "url": "https://faydaabaybank.com.et/"
+    },
+    {
+        "id": "addis",
+        "name": "Addis International Bank",
+        "category": "bank",
+        "logo": "banks/addis.png",
+        "url": "https://fayda.addisbank.com.et/"
+    },
+    {
+        "id": "amhara",
+        "name": "Amhara Bank",
+        "category": "bank",
+        "logo": "banks/amhara.png",
+        "url": "https://fayda.amharabank.com.et/"
+    },
+    {
+        "id": "anbesa",
+        "name": "Anbesa Bank",
+        "category": "bank",
+        "logo": "banks/anbesa.png",
+        "url": "https://fayda.anbesabank.com/"
+    },
+    {
+        "id": "awash",
+        "name": "Awash Bank",
+        "category": "bank",
+        "logo": "banks/awash.png",
+        "url": "https://fayda.awashbank.com/en"
+    },
+    {
+        "id": "boa",
+        "name": "Bank of Abyssinia",
+        "category": "bank",
+        "logo": "banks/abyssinia.png",
+        "url": "https://cs.bankofabyssinia.com/fayda_connect/"
+    },
+    {
+        "id": "berhan",
+        "name": "Berhan Bank",
+        "category": "bank",
+        "logo": "banks/berhan.png",
+        "url": "https://nationalidharmonization.berhanonline.et:9095/fayda-login"
+    },
+    {
+        "id": "cbe",
+        "name": "Commercial Bank of Ethiopia",
+        "category": "bank",
+        "logo": "banks/cbe.png",
+        "url": "https://cbefayda.cbe.com.et/"
+    },
+    {
+        "id": "coop",
+        "name": "Cooperative Bank of Oromia",
+        "category": "bank",
+        "logo": "banks/coop.png",
+        "url": "https://my.coopbankoromiasc.com/harmonization"
+    },
+    {
+        "id": "dashen",
+        "name": "Dashen Bank",
+        "category": "bank",
+        "logo": "banks/dashen.png",
+        "url": "https://dashensuperapp.com/dashen-fayda"
+    },
+    {
+        "id": "hibret",
+        "name": "Hibret Bank",
+        "category": "bank",
+        "logo": "banks/hibret.png",
+        "url": "https://services.hibretbank.com.et/fayda/index"
+    },
+    {
+        "id": "hijra",
+        "name": "Hijra Bank",
+        "category": "bank",
+        "logo": "banks/hijra.png",
+        "url": "https://apps.hijradigital.com/fayda/v2/"
+    },
+    {
+        "id": "nib",
+        "name": "Nib International Bank",
+        "category": "bank",
+        "logo": "banks/nib.png",
+        "url": "https://fayda.nibbank.com.et/"
+    },
+    {
+        "id": "oromia",
+        "name": "Oromia Bank",
+        "category": "bank",
+        "logo": "banks/oromia.png",
+        "url": "https://obfayda.oromiabank.com/"
+    },
+    {
+        "id": "siinqee",
+        "name": "Siinqee Bank",
+        "category": "bank",
+        "logo": "banks/siinqee.png",
+        "url": "https://fayda.siinqeebank.com:7443/"
+    },
+    {
+        "id": "tsehay",
+        "name": "Tsehay Bank",
+        "category": "bank",
+        "logo": "banks/tsehay.png",
+        "url": "https://fayda.tsehaybank.com.et/FAYDA/home"
+    },
+    {
+        "id": "wegagen",
+        "name": "Wegagen Bank",
+        "category": "bank",
+        "logo": "banks/wegagen.png",
+        "url": "https://fayda.wegagenbanksc.com.et/harmonization"
+    },
+    {
+        "id": "zamzam",
+        "name": "ZamZam Bank",
+        "category": "bank",
+        "logo": "banks/zamzam.png",
+        "url": "https://fayda.zamzambank.com.et/"
+    },
+    {
+        "id": "zemen",
+        "name": "Zemen Bank",
+        "category": "bank",
+        "logo": "banks/zemen.png",
+        "url": "https://fayda.zemenbank.com/verifayda/"
+    }
+]
