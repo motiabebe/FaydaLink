@@ -1,0 +1,9 @@
+[
+    {
+        "id": "mor",
+        "name": "Ministry of Revenues",
+        "category": "finance",
+        "logo": "finance/mor.png",
+        "url": "https://mor-migration.fayda.et/"
+    }
+]

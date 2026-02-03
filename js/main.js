@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const DATA_SOURCES = {
         'bank': 'banks.json',
         'education': 'education.json',
+        'finance': 'finance.json',
     };
 
     const grid = document.getElementById('itemsGrid');
