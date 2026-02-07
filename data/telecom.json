@@ -1,0 +1,9 @@
+[
+    {
+        "id": "telebirr",
+        "name": "Telebirr (via SuperApp)",
+        "category": "telecom",
+        "logo": "telecom/telebirr.png",
+        "url": "https://www.superapp.ethiomobilemoney.et:38443/static/mIndex.html?executeUrl=native://ethio/customer/upgradeLevel&appType=customer#/middle-page"
+    }
+]

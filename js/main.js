@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'bank': 'banks.json',
         'education': 'education.json',
         'finance': 'finance.json',
+        'telecom': 'telecom.json',
     };
 
     const grid = document.getElementById('itemsGrid');
