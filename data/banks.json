@@ -14,6 +14,13 @@
         "url": "https://fayda.addisbank.com.et/"
     },
     {
+        "id": "ahadu",
+        "name": "Ahadu Bank",
+        "category": "bank",
+        "logo": "banks/ahadu.png",
+        "url": "https://verifayda.ahadubank.com/"
+    },
+    {
         "id": "amhara",
         "name": "Amhara Bank",
         "category": "bank",
@@ -49,6 +56,13 @@
         "url": "https://nationalidharmonization.berhanonline.et:9095/fayda-login"
     },
     {
+        "id": "bunna",
+        "name": "Bunna Bank",
+        "category": "bank",
+        "logo": "banks/bunna.png",
+        "url": "https://verifayda.bunnabanksc.com/"
+    },
+    {
         "id": "cbe",
         "name": "Commercial Bank of Ethiopia",
         "category": "bank",
@@ -68,6 +82,13 @@
         "category": "bank",
         "logo": "banks/dashen.png",
         "url": "https://dashensuperapp.com/dashen-fayda"
+    },
+    {
+        "id": "enat",
+        "name": "Enat Bank",
+        "category": "bank",
+        "logo": "banks/enat.png",
+        "url": "https://kyc.enatbanksc.com/"
     },
     {
         "id": "hibret",
@@ -96,6 +117,13 @@
         "category": "bank",
         "logo": "banks/oromia.png",
         "url": "https://obfayda.oromiabank.com/"
+    },
+    {
+        "id": "rammis",
+        "name": "Rammis Bank",
+        "category": "bank",
+        "logo": "banks/rammis.png",
+        "url": "https://fayda.rammisbank.et/"
     },
     {
         "id": "siinqee",
