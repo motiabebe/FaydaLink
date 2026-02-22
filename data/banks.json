@@ -84,6 +84,13 @@
         "url": "https://dashensuperapp.com/dashen-fayda"
     },
     {
+        "id": "dbe",
+        "name": "Development Bank of Ethiopia",
+        "category": "bank",
+        "logo": "banks/dbe.png",
+        "url": "https://fayda.dbe.com.et/"
+    },
+    {
         "id": "enat",
         "name": "Enat Bank",
         "category": "bank",
