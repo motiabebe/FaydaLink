@@ -98,6 +98,20 @@
         "url": "https://kyc.enatbanksc.com/"
     },
     {
+        "id": "gadaa",
+        "name": "Gadaa Bank",
+        "category": "bank",
+        "logo": "banks/gadaa.png",
+        "url": "https://fayda.gadaabank.com.et/"
+    },
+    {
+        "id": "goh",
+        "name": "Goh Betoch Bank",
+        "category": "bank",
+        "logo": "banks/goh.png",
+        "url": "https://nid.gohbetbank.com/fayda-verification"
+    },
+    {
         "id": "hibret",
         "name": "Hibret Bank",
         "category": "bank",
