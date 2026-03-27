@@ -102,7 +102,7 @@
         "name": "Gadaa Bank",
         "category": "bank",
         "logo": "banks/gadaa.png",
-        "url": "https://fayda.gadaabank.com.et/"
+        "url": "https://fayda-v2.gadaabank.com.et/"
     },
     {
         "id": "goh",
@@ -110,6 +110,13 @@
         "category": "bank",
         "logo": "banks/goh.png",
         "url": "https://nid.gohbetbank.com/fayda-verification"
+    },
+    {
+        "id": "global",
+        "name": "Global Bank Ethioipa",
+        "category": "bank",
+        "logo": "banks/global.png",
+        "url": "https://globalbankethiopiaapps.com.et/fayda2/"
     },
     {
         "id": "hibret",
@@ -145,6 +152,13 @@
         "category": "bank",
         "logo": "banks/rammis.png",
         "url": "https://fayda.rammisbank.et/"
+    },
+    {
+        "id": "",
+        "name": "Shabelle Bank",
+        "category": "bank",
+        "logo": "banks/shabelle.png",
+        "url": "https://auth.shabelle-bank.et/SelfVerification"
     },
     {
         "id": "siinqee",
