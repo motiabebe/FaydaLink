@@ -140,6 +140,20 @@
         "url": "https://fayda.nibbank.com.et/"
     },
     {
+        "id": "nisir",
+        "name": "Nisir Microfinance",
+        "category": "bank",
+        "logo": "banks/nisir.png",
+        "url": "https://fayda.nisirmfi.com/"
+    },
+    {
+        "id": "omo",
+        "name": "Omo Bank",
+        "category": "bank",
+        "logo": "banks/omo.png",
+        "url": "https://fayda.omobanksc.com/"
+    },
+    {
         "id": "oromia",
         "name": "Oromia Bank",
         "category": "bank",
@@ -154,7 +168,21 @@
         "url": "https://fayda.rammisbank.et/"
     },
     {
-        "id": "",
+        "id": "sidama",
+        "name": "Sidama Bank",
+        "category": "bank",
+        "logo": "banks/sidama.png",
+        "url": "https://faydaportal.sidamabanksc.com/"
+    },
+    {
+        "id": "siket",
+        "name": "Siket Bank",
+        "category": "bank",
+        "logo": "banks/siket.png",
+        "url": "https://faydaonline.siketbank.com.et:8245/fayd"
+    },
+    {
+        "id": "shabelle",
         "name": "Shabelle Bank",
         "category": "bank",
         "logo": "banks/shabelle.png",
@@ -166,6 +194,13 @@
         "category": "bank",
         "logo": "banks/siinqee.png",
         "url": "https://fayda.siinqeebank.com:7443/"
+    },
+    {
+        "id": "tsedey",
+        "name": "Tsedey Bank",
+        "category": "bank",
+        "logo": "banks/tsedey.png",
+        "url": "https://tsbfayda.tsedeybank.com.et"
     },
     {
         "id": "tsehay",
