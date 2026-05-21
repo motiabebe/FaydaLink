@@ -100,14 +100,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const fallbackText = item.name.charAt(0);
             const card = `
                 <div class="col-6 col-md-4 col-lg-3 animate__animated animate__fadeInUp" style="animation-delay: ${delay}s">
-                    <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="text-decoration-none card-link-wrapper">
+                    <a href="${item.url}" target="_blank" rel="noopener noreferrer" title="Connect your Fayda ID to ${item.name}" class="text-decoration-none card-link-wrapper">
                         <div class="glass-card h-100 p-4 d-flex flex-column justify-content-center align-items-center text-center position-relative">
                             <div class="mb-3 d-flex align-items-center justify-content-center" style="height: 65px; width: 100%;">
-                                <img src="img/logos/${item.logo}" alt="${item.name}" class="bank-logo"
-                                    onerror="this.onerror=null; this.src='https://placehold.co/100x60/transparent/white?text=${fallbackText}'" loading="lazy">
+                                <img src="img/logos/${item.logo}" 
+                                    class="bank-logo"
+                                    alt="Link ${item.name} with Fayda ID" 
+                                    onerror="this.onerror=null; 
+                                    this.src='https://placehold.co/100x60/transparent/white?text=${fallbackText}'" 
+                                    loading="lazy"
+                                >
                             </div>
                             
-                            <!-- Name: Removed mb-4, added lh-sm for better multi-line reading -->
                             <h6 class="fw-medium text-white mb-0 lh-sm">${item.name}</h6>
                         </div>
                     </a>
