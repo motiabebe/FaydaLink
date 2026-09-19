@@ -2,21 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const yearSpan = document.getElementById('year');
     const currentYear = new Date().getFullYear();
-    yearSpan.textContent = currentYear;
+    if (yearSpan) yearSpan.textContent = currentYear;
 
     const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-        backToTop.classList.toggle('d-none', window.scrollY <= 200);
-    });
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('d-none', window.scrollY <= 200);
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     const DATA_SOURCES = {
         'bank': 'banks.json',
-        'education': 'education.json',
-        'finance': 'finance.json',
-        'telecom': 'telecom.json',
+        'wallets': 'wallets.json',
+        'services': 'services.json',
     };
 
     const grid = document.getElementById('itemsGrid');
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let dataCache = {};
     let currentData = [];
 
-    loadCategory('bank');
+    loadCategory('all');
 
     categoryBtns.forEach(btn => {
         if (!btn.disabled) {
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const term = e.target.value.toLowerCase();
         const activeFilter = document.querySelector('.btn-circle-filter.active');
         let filtered = currentData;
-        if (activeFilter.dataset.filter !== 'all') {
+        if (activeFilter && activeFilter.dataset.filter !== 'all') {
             const letter = activeFilter.textContent;
             filtered = filtered.filter(d => d.name.toUpperCase().startsWith(letter));
         }
@@ -64,9 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const sources = Object.values(DATA_SOURCES);
                 const results = await Promise.all(sources.map(fetchFile));
                 finalData = results.flat();
-            } else {
+            } else if (DATA_SOURCES[category]) {
                 finalData = await fetchFile(DATA_SOURCES[category]);
             }
+
             currentData = finalData.sort((a, b) => a.name.localeCompare(b.name));
             generateAlphabetFilters(currentData);
             renderCards(currentData);
@@ -89,6 +91,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderCards(data) {
+        const existingTooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        existingTooltips.forEach(el => {
+            const instance = bootstrap.Tooltip.getInstance(el);
+            if (instance) instance.dispose();
+        });
+
         grid.innerHTML = '';
         if (data.length === 0) {
             grid.innerHTML = `<div class="col-12 text-center text-white-50 mt-4"><h5>No results found</h5></div>`;
@@ -98,9 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
         data.forEach((item, index) => {
             const delay = index < 12 ? index * 0.05 : 0;
             const fallbackText = item.name.charAt(0);
+            const tooltipAttr = item.type
+                ? `data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="${item.type}"`
+                : '';
+
             const card = `
                 <div class="col-6 col-md-4 col-lg-3 animate__animated animate__fadeInUp" style="animation-delay: ${delay}s">
-                    <a href="${item.url}" target="_blank" rel="noopener noreferrer" title="Connect your Fayda ID to ${item.name}" class="text-decoration-none card-link-wrapper">
+                    <a href="${item.url}" target="_blank" rel="noopener noreferrer" 
+                       title="Connect your Fayda ID to ${item.name}" 
+                       class="text-decoration-none card-link-wrapper"
+                       ${tooltipAttr}>
                         <div class="glass-card h-100 p-4 d-flex flex-column justify-content-center align-items-center text-center position-relative">
                             <div class="mb-3 d-flex align-items-center justify-content-center" style="height: 65px; width: 100%;">
                                 <img src="img/logos/${item.logo}" 
@@ -111,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                     loading="lazy"
                                 >
                             </div>
-                            
                             <h6 class="fw-medium text-white mb-0 lh-sm">${item.name}</h6>
                         </div>
                     </a>
@@ -119,6 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             grid.insertAdjacentHTML('beforeend', card);
         });
+
+        const tooltipElements = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        tooltipElements.forEach(el => new bootstrap.Tooltip(el));
     }
 
     function generateAlphabetFilters(data) {

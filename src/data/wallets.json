@@ -1,0 +1,18 @@
+[
+  {
+    "id": "telebirr",
+    "name": "Telebirr",
+    "type": "Mobile Wallet",
+    "category": "wallets",
+    "logo": "wallets/telebirr.png",
+    "url": "https://www.superapp.ethiomobilemoney.et:38443/static/mIndex.html?executeUrl=native://ethio/customer/upgradeLevel&appType=customer#/middle-page"
+  },
+  {
+    "id": "mpesa",
+    "name": "M-PESA (Safaricom)",
+    "type": "Mobile Wallet",
+    "category": "wallets",
+    "logo": "wallets/mpesa.png",
+    "url": "https://m-pesabusiness.safaricom.et/nid/login"
+  }
+]

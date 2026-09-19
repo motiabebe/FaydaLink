@@ -1,126 +1,108 @@
-# FaydaLink | Digital ID Directory
+# FaydaLink
 
-**FaydaLink** is an open-source, community-driven directory designed to help Ethiopians securely find the direct links to connect their **Fayda ID** with banks, telecom providers, and other essential services.
+**FaydaLink** is an open-source, community-driven directory designed to help Ethiopians securely find the direct links to connect their **Fayda ID** with banks, mobile wallets, and other essential services.
 
-🔗 **Live Demo:** [faydalink.vercel.app](https://faydalink.vercel.app) 
+🔗 **Live Site:** [faydalink.vercel.app](https://faydalink.vercel.app)
 
 ---
 
-## ✨ Features
+## Overview
 
-*   **🔍 Instant Search:** Filter providers by name immediately.
-*   **📂 Categorized:** Separate tabs for Banks, Education, etc.
-*   **⚡ Lightweight:** No backend database. Loads data from static JSON files.
-*   **🤖 Automated Assets:** Python scripts automatically standardize logo sizes.
+- Zero PII: No user data, session information, or credentials are collected or stored.
+- Fully Static: Operates on partitioned static JSON files without a backend database.
+- Deployment Build Pipeline: Third-party logos are normalized to a consistent 400x200 (2:1 aspect ratio) transparent canvas during build time.
 
 ---
 
 ## 🛠 Tech Stack
 
-*   **Core:** HTML5, CSS3, JavaScript (ES6+)
-*   **Framework:** Bootstrap 5.3
-*   **Icons:** Bootstrap Icons
-*   **Animations:** Animate.css
-*   **Automation:** Python (Pillow) & GitHub Actions for image processing.
+- **Core:** Vanilla JavaScript (ES6+), HTML5, CSS3
+- **Styling:** Bootstrap 5.3, Bootstrap Icons
+- **Animations:** Animate.css
+- **Build & Optimization:** Python (Pillow) for image processing.
 
 ---
 
-## 🤝 Contribution Guide
-
-We welcome contributions! If you notice a missing bank, a broken link, or want to add a new category, follow these steps.
-
-### 1. Adding a New Bank/Provider
-
-To add a new item (e.g., a new Bank), you need two things: the **Logo** and the **Data Entry**.
-
-#### A. The Logo
-**Do not** resize the logo manually. We have an automated script for that.
-1.  Find a high-quality logo (preferably PNG with transparency).
-2.  Place the original file in the **`raw_logos/`** folder.
-    *   *Example:* `raw_logos/banks/bank_name.png`
-3.  **Do not** put it in `img/logos/`. The system will do that automatically when you push.
-
-#### B. The Data
-1.  Open the relevant file in the `data/` folder (e.g., `data/banks.json`).
-2.  Add a new object to the array using this structure:
-
-```json
-{
-  "id": "unique-id",
-  "name": "Bank Name",
-  "category": "bank",
-  "logo": "banks/filename.png", 
-  "url": "https://official-link-to-fayda-page"
-}
-```
-> **Note:** The `logo` path in JSON should match the path inside `img/logos/` (which mirrors your folder structure in `raw_logos/`).
-
-### 2. Image Requirements
-
-*   **Format:** `.png` (Preferred for transparency) or `.jpg`.
-*   **Background:** Transparent background is highly recommended, but incase a transparent version is not available, a non-distracting solid background is acceptable.
-*   **Dimensions:**
-    *   We use a Python script to standardize all logos to a **2:1 Aspect Ratio canvas** (centered).
-    *   Just provide the highest resolution available. The script handles the rest.
-
-### 3. Adding a New Category (e.g., Insurance)
-
-1.  Create a new JSON file: `data/insurance.json`.
-2.  Add your data (see structure above).
-3.  Update **`js/main.js`**:
-    ```javascript
-    const DATA_SOURCES = {
-        'bank': 'banks.json',
-        'education': 'education.json',
-        'insurance': 'insurance.json' // <-- Add this line
-    };
-    ```
-4.  Update **`index.html`** to add the button:
-    ```html
-    <button class="btn btn-glass-tab" data-category="insurance">
-        <i class="bi bi-shield-check me-2"></i> Insurance
-    </button>
-    ```
-    * The Insurance button is already included in **`index.html`** marked as soon, just remove the disabled attribute when ready.
-
----
-
-## 💻 Local Development
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/your-username/faydalink.git
-    cd faydalink
-    ```
-
-2.  **Run the project:**
-    Since this is a static site, you can use any simple server.
-    *   **VS Code:** Use "Live Server" extension.
-    *   **Python:**
-        ```bash
-        python -m http.server
-        ```
----
-
-## 📂 Project Structure
+## Project Structure
 
 ```text
-/
-├── data/                 # JSON files containing link data
-│   ├── banks.json
-│   └── education.json
-├── img/
-│   ├── logos/            # OPTIMIZED logos (Do not edit directly)
-│   └── favicon/
-├── raw_logos/            # ORIGINAL logos (Put new images here)
-├── js/
-│   └── main.js           # Logic for loading data & filtering
 ├── scripts/
-│   └── optimize_images.py # Python script for resizing logos
-├── index.html
-├── style.css
-└── README.md
+│   └── build.py           # Compiles static files and optimizes logos into dist/
+├── src/
+│   ├── css/
+│   ├── data/              # Data files (banks.json, wallets.json, services.json)
+│   ├── img/
+│   │   ├── favicon/
+│   │   ├── og/
+│   │   └── logos/         # Source logos (PNG format only)
+│   ├── js/
+│   ├── index.html
+│   ├── manifest.json
+│   ├── robots.txt
+│   └── sitemap.xml
+├── dist/                  # Production build output (git-ignored)
+├── requirements.txt
+└── vercel.json
 ```
+
+---
+
+## Contributing
+
+Contributions to add missing institutions or fix broken URLs are welcome.
+
+### 1. Adding a Provider
+
+Every entry requires two things: a logo file and an entry in the matching JSON file.
+
+#### A. Logo Requirements
+
+- Format: PNG with a transparent background.
+- Dimensions: High-resolution source. The build script automatically scales and pads the image onto a 400x200 canvas.
+- Location: Place the PNG inside `src/img/logos/{category}/` (e.g., `src/img/logos/banks/example.png`).
+
+#### B. Data Entry
+
+Open the relevant JSON file in `src/data/` (`banks.json`, `wallets.json`, or `services.json`) and append the record:
+
+```json
+{ "id": "example", "name": "Example Institution", "type": "Commercial Bank", "category": "bank", "logo": "banks/example.png", "url": "https://official-fayda-linking-url" }
+```
+
+_Note: The `logo` value must end in `.png` and mirror the folder path inside `src/img/logos/`. Set `category` to `"bank"`, `"wallets"`, or `"services"` to match the destination file._
+
+---
+
+## Local Development
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/motiabebe/FaydaLink.git
+    cd FaydaLink
+    ```
+
+2. Install Python dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Build the project:
+
+    ```bash
+    python scripts/build.py
+    ```
+
+    This generates the `dist/` directory with all compiled assets and normalized logos.
+
+4. Run a local server:
+
+    ```bash
+    python -m http.server -d dist 8000
+    ```
+
+    Visit `http://localhost:8000` in your browser.
 
 ---
 
@@ -128,9 +110,9 @@ To add a new item (e.g., a new Bank), you need two things: the **Logo** and the 
 
 **FaydaLink** is a community project and is **not** officially affiliated with NID (National ID Program) or any of the listed service providers.
 
-*   All links are provided "as is" for convenience.
-*   We do not collect or store any user data.
-*   **Always verify** the URL in your browser before entering personal information.
+- All links are provided "as is" for convenience.
+- We do not collect or store any user data.
+- **Always verify** the URL in your browser before entering personal information.
 
 ---
 

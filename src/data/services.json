@@ -1,0 +1,26 @@
+[
+  {
+    "id": "aacrrsa",
+    "name": "Addis Ababa Civil Registration",
+    "type": "Civil Registry",
+    "category": "services",
+    "logo": "services/aacrrsa.png",
+    "url": "https://portal.aacrrsa.gov.et/nid-mapping"
+  },
+  {
+    "id": "euee",
+    "name": "Ethiopian University Exit Exam (MoE)",
+    "type": "Education",
+    "category": "services",
+    "logo": "services/moe.png",
+    "url": "https://verify.ethernet.edu.et/"
+  },
+  {
+    "id": "mor",
+    "name": "Ministry of Revenues (TIN)",
+    "type": "Tax Authority",
+    "category": "services",
+    "logo": "services/mor.png",
+    "url": "https://mor-migration.fayda.et/"
+  }
+]
